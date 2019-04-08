@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>items project</title>
+</head>
+<body>
+  <% if items.empty? %>
+    <div>No items</div>
+  <% else %>
+    <ul>
+      <% items.each do |item| %>
+        <li><%= item[:id] %>. <%= item[:item] %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</body>
+</html>

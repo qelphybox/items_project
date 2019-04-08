@@ -10,7 +10,8 @@ end
 items = DB[:items]
 
 get '/' do
-  items.to_a.inject("") { |acc, item| acc << item.to_s }
+  list_items = items.to_a.inject("") { |acc, item| acc << item.to_s }
+  erb(:index, locals: { items: list_items })
 end
 
 post '/' do
